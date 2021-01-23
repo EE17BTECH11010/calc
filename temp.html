@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>Using most javascrpit</title>
+        <link rel="stylesheet" type="text/css" href="temp.css">
+        
+        <script>
+        // var m=new Map();             //declaring new map
+// note: when ever you are using document.getElementById(idname) to get the string or sentence or anything that id holds use value
+        
+        function clearloc()
+        {
+            localStorage.clear();
+        }
+        function signup(key,val)
+        {
+            
+            var k=document.getElementById(key).value;
+            // if(m.has(k))
+            // {
+            //     alert("Username already present");
+            //     return
+            // }
+            var temp=localStorage.getItem(k);
+            var v=document.getElementById(val).value;
+            // console.log(v);
+            // alert(v);
+            
+            // console.log(temp);
+            // console.log(typeof(temp));
+            // localStorage.setItem(k,v);
+
+            if(typeof(temp)!='string')
+            {
+                
+                // m.set(k,v);         //for adding key value pair
+                localStorage.setItem(k,v);
+                alert("succesfully created");
+                // console.log(m);
+                
+            }
+            else
+            {
+            alert('Username is already present');
+            
+            }
+        }
+        function signin(key,val)
+        {
+            var k=document.getElementById(key).value;
+            var v=document.getElementById(val).value;
+            // console.log(k).log(v);
+            // alert(k);
+            // alert(v);
+            // if(m.has(k) && m.get(k)==v)
+            // {
+                
+            //     alert("your login approved");
+            // }
+            // else if(m.has(k))
+            // {
+            //     alert("login password combination is not found");
+            // }
+            // else
+            // {
+            //     alert("You dont have account");
+            // }
+            // console.log(m);
+            var temp=localStorage.getItem(k);
+            console.log(temp);
+            if(typeof(temp)=='undefined' || typeof(temp)=='null')
+            alert('You dont have an account');
+            else if(temp==v)
+            alert('your login approved');
+            else
+            alert('login password combination is incorrect');
+            // if(m.has(k) && m.get(k)==v)
+            // {
+                
+            //     alert("your login approved");
+            // }
+            // else if(m.has(k))
+            // {
+            //     alert("login password combination is not found");
+            // }
+            // else
+            // {
+            //     alert("You dont have account");
+            // }
+            
+        }
+        function cal()
+        {
+            //parseInt is for obtaining the 1st integer present in the text
+            var x1=parseFloat(document.getElementById('valuex').value);
+            var x2=parseFloat(document.getElementById('valuey').value);              //for getting the value from id
+            var op=document.getElementById('operator').value;
+            if(op==="+")
+            {
+                document.getElementById('result').value=x1+x2;            //writing the value in id result
+            }
+            else if(op==="-")
+            {
+                document.getElementById('result').value=x1-x2;
+            }
+            else if(op==="*")
+            {
+                document.getElementById('result').value=x1*x2;
+            }
+            else if(op==="/")
+            {
+                document.getElementById('result').value=x1/x2;
+            }
+            // console.log(typeof(x))
+            // console.log(typeof(y))
+            // prompt(typeof(x))
+            
+        }
+        //creating a toggle function
+        function toggle(name)
+        {
+            var temp=document.getElementById(name);
+            if(temp.style.display=="none")
+                temp.style.display='block';
+            else
+                temp.style.display='none';
+        }
+            
+        console.log("hii");
+        </script>
+    </head>
+    <!-- <body style="background-image: url('https://wallpapercave.com/wp/wp3458025.jpg'); text-align: center;"> -->
+    <body class="c1">
+
+        <h1>What is javascrpit</h1>
+        <!-- id is set for the paragraph -->
+        <p id="jej" class="c1">        
+            Hii javascrpit is a language used for webdevelopement
+        </p>
+        <button type="button" onclick="document.getElementById('jej').style.color='green'">change color to green</button>
+        <button type="button" onclick="document.getElementById('jej').style.color='blue'">change color to blue</button>
+        <p id="haha">        
+            Hii javascrpit is a language used for webdevelopement<br>
+
+        </p>
+        <button type="button" onclick="document.getElementById('haha').innerHTML='I can change your sentence'">Change sentence</button>&nbsp;&nbsp;&nbsp;
+        <button type="button" onclick="document.getElementById('haha').innerHTML='Hii javascrpit is a language used for webdevelopement'">Prev Sentence</button>&nbsp;&nbsp;&nbsp;
+        <button type="button" onclick="document.getElementById('haha').style.display='none'">make invisible</button>&nbsp;&nbsp;&nbsp;
+        <button type="button" onclick="document.getElementById('haha').style.display='block'">make visible</button>
+        <br><br>
+        
+        <input type="number" id='valuex' placeholder="enter x"><br><br>
+        <input type="number" id='valuey' placeholder="enter y"><br><br>
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">x</option>
+            <option value="/">/</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="cal();">view result by click</button>
+        <button type="button" onmouseover="cal();">view by point</button>
+
+        <input type="text" id='result' placeholder="result"><br>
+        
+        <p id="toggler" style="display:none">I am the web developer and trying to create toggle button for hiding the text</p>
+        <button type="button" onclick="toggle('toggler')">toggling</button>
+        <!-- creating username and password type -->
+
+        <br><br>
+        <p>entering the new concept i.e creating a user name and password</p>
+
+        <input type="text" id='username' placeholder="username">
+        <br><input type="password" id='passw' placeholder="password">
+        <br>
+
+        <!-- for the functions signin and signup the inputs required are strings as id of username and passeord are strings-->
+        <button type="button" onclick="signup('username','passw')">sign up</button>
+        <button type="button" onclick="signin('username','passw')">sign in</button>
+        
+        <button  type="button" onclick="clearloc();">clear</button>
+        <br><a href="https://www.youtube.com/">click here to go to youtube</a>
+
+       <br><br> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdQmO162EQ03JMBoVgvQ781HwqoAlWynrGNw&usqp=CAU" />
+       
+    </body>
+
+
+</html>

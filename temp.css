@@ -1,0 +1,41 @@
+/* <style> */
+.c1{
+    /* background-image: url('back.jpg'); */
+    /* background-color: lightblue; */
+    /* below line is for backround image  */
+    background-image: url('https://cdn.pixabay.com/photo/2017/07/01/19/48/background-2462431_960_720.jpg');
+    /* font-size is for the fontsize of the entire text present in the class */
+    font-size: 23px;
+    /* textalign is for aligning the entire text present in the class */
+    text-align: center;
+    /* border is for bodering the entire class */
+    border: 3px outset black;
+    background-size: cover;
+    color:rgb(7, 12, 27);
+    /* backroundrepeats when text is not fitting inside the image if we write no repeat it will not repeat */
+    /* background-repeat: no-repeat; */
+  }
+  /* </style> */
+  
+  .c2{
+    background-image: url('hel.webp');
+    font-size: 23px;
+    text-align: left;
+    /* color is for text color */
+    color:rgb(93, 122, 88);
+    border: 3px outset rgb(31, 84, 92);
+  
+    background-repeat: no-repeat;
+    /* backroundsize will extend the image to the entire text present to the given size */
+    background-size: cover;
+  }
+  
+  #id1
+  {
+    width: 30%;
+    /* text-align: left; */
+    float:right;
+    border: 3px outset black;
+  
+  }
+  
